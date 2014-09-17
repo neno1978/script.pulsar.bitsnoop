@@ -8,7 +8,7 @@ import urllib2
 PAYLOAD = json.loads(base64.b64decode(sys.argv[1]))
 
 def search(query):
-    response = urllib2.urlopen("http://thepiratebay.org/search.php?q=%s" % urllib.quote_plus(query))
+    response = urllib2.urlopen("http://bitsnoop.com/search/all/%s" % urllib.quote_plus(query))
     data = response.read()
     if response.headers.get("Content-Encoding", "") == "gzip":
         import zlib
